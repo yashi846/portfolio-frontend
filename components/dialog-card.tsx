@@ -45,7 +45,7 @@ export default function DCard({
                                 </CardTitle>
                             </CardHeader>
                             <CardContent className="pt-2 w-full">
-                                <div className="text-sm leading-snug break-words w-full max-w-2xl mb-4 text-center">
+                                <div className=" text-sm leading-snug break-words w-full max-w-2xl mb-4 text-center">
                                     {shortDescription}
                                 </div>
                             </CardContent>

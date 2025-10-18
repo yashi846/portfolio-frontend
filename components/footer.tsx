@@ -34,7 +34,7 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-    copyright = "© 2025 Yuto Yashiro. All rights reserved",
+    copyright = "© 2025 Yashi. All rights reserved",
     showModeToggle = false,
     className,
 }: FooterProps) {
