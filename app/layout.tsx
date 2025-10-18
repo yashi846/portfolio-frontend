@@ -1,4 +1,6 @@
+import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { HeaderNav } from "@/components/navigation-menu"
 
 export default function RootLayout({
   children,
@@ -16,7 +18,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <HeaderNav />
+            <main className="mx-auto max-w-screen-xl px-4 py-6">
+              {children}
+            </main>
           </ThemeProvider>
         </body>
       </html>
