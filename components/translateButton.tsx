@@ -25,11 +25,7 @@ export default function TranslateButton() {
   };
 
   return (
-    <Button
-      variant="ghost"
-      disabled={isPending}
-      onClick={toggleLocale}
-    >
+    <Button variant="ghost" disabled={isPending} onClick={toggleLocale}>
       {currentLang === "ja" ? "English" : "日本語"}
     </Button>
   );

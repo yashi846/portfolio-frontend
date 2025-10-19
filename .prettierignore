@@ -1,0 +1,17 @@
+# Build outputs
+.next
+out
+build
+
+# Dependencies
+node_modules
+
+# Misc
+coverage
+*.log
+
+# Env
+.env*
+
+# Editor settings
+.vscode

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useIsMobile } from "@/hooks/use-mobile"
+import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,15 +9,14 @@ import {
   NavigationMenuList,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import TranslateButton from "./translateButton"
-
+} from "@/components/ui/navigation-menu";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import TranslateButton from "./translateButton";
 
 function NavigationMenuDemo() {
-  const isMobile = useIsMobile()
-  const { setTheme, theme } = useTheme()
+  const isMobile = useIsMobile();
+  const { setTheme, theme } = useTheme();
 
   return (
     <NavigationMenu>
@@ -43,7 +42,7 @@ function NavigationMenuDemo() {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <TranslateButton/>
+          <TranslateButton />
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild>
@@ -52,7 +51,11 @@ function NavigationMenuDemo() {
               className="flex items-center gap-2 px-2 py-1 rounded hover:bg-accent transition"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
             </button>
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -61,9 +64,8 @@ function NavigationMenuDemo() {
       {/* ビューポート（開閉時のアニメーション領域） */}
       {!isMobile && <NavigationMenuViewport />}
     </NavigationMenu>
-  )
+  );
 }
-
 
 export function HeaderNav() {
   return (
@@ -74,5 +76,5 @@ export function HeaderNav() {
         </div>
       </div>
     </header>
-  )
+  );
 }
