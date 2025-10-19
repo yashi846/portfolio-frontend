@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "@/src/i18n/hooks";
+import { getAssetPath } from "@/lib/asset-path";
 import DCard from "@/components/dialog-card";
 import { Button } from "@/components/ui/button";
 
@@ -104,7 +105,7 @@ export default function Home() {
             language={["TypeScript"]}
             framework={["Next.js", "React"]}
             repositoryUrl="https://github.com/yashi846/portfolio-frontend"
-            imageUrl="/images/works/portfolio-frontend.png"
+            imageUrl={getAssetPath("/images/works/portfolio-frontend.png")}
             imageAlt="Portfolio website frontend screenshot"
           />
           <DCard
@@ -118,6 +119,8 @@ export default function Home() {
             language={["Python", "JavaScript"]}
             framework={["React"]}
             repositoryUrl="https://github.com/yashi846/portfolio-backend"
+            imageUrl={getAssetPath("/images/works/portfolio-backend.png")}
+            imageAlt="Portfolio website backend screenshot"
           />
           <DCard
             title={t("works.shooting.title")}
@@ -126,7 +129,7 @@ export default function Home() {
             technicalHighlights={[t("works.shooting.highlight1")]}
             language={["Blueprint"]}
             repositoryUrl="https://github.com/yashi846/shooting-game"
-            imageUrl="/images/works/shooting-game.png"
+            imageUrl={getAssetPath("/images/works/shooting-game.png")}
             imageAlt="Shooting game screenshot"
           />
           <DCard
@@ -139,7 +142,7 @@ export default function Home() {
             ]}
             language={["Blueprint"]}
             repositoryUrl="https://github.com/yashi846/speed_game"
-            imageUrl="/images/works/speed-game.jpg"
+            imageUrl={getAssetPath("/images/works/speed-game.jpg")}
             imageAlt="Speed game screenshot"
           />
         </div>

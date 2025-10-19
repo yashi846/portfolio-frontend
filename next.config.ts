@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   output: "export",
 
   // 2. GitHub Pages用の設定 (リポジトリ名)
-  basePath: "/portfolio-frontend",
+  // 開発環境では basePath を無効化
+  basePath: process.env.NODE_ENV === "production" ? "/portfolio-frontend" : "",
 
   // 3. (重要) 'next/image' を静的サイトで使うための設定
   images: {
