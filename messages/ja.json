@@ -41,7 +41,8 @@
       "shortDescription": "ポートフォリオサイトのフロントエンド",
       "description": "このポートフォリオサイトをNext.js、TypeScript、Tailwind CSSを使用して作成しました。shadcn/uiコンポーネントを活用し、レスポンシブデザインを実装しています。",
       "highlight1": "初めてのサイト制作",
-      "highlight2": "初めてのフロントエンド"
+      "highlight2": "初めてのフロントエンド",
+      "highlight3": "初めてのGithub Actions"
     },
     "backend": {
       "title": "ポートフォリオサイト バックエンド",

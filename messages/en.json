@@ -41,7 +41,8 @@
       "shortDescription": "Portfolio website frontend",
       "description": "This portfolio website was created using Next.js, TypeScript, and Tailwind CSS. It utilizes shadcn/ui components and implements responsive design.",
       "highlight1": "First website project",
-      "highlight2": "First frontend"
+      "highlight2": "First frontend",
+      "highlight3": "First Github Actions"
     },
     "backend": {
       "title": "Portfolio Website Backend",

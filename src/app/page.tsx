@@ -101,6 +101,7 @@ export default function Home() {
             technicalHighlights={[
               t("works.frontend.highlight1"),
               t("works.frontend.highlight2"),
+              t("works.frontend.highlight3"),
             ]}
             language={["TypeScript"]}
             framework={["Next.js", "React"]}
