@@ -64,7 +64,7 @@ export default function DCard({
                         </DialogHeader>
                         {technicalHighlights?.length > 0 && (
                             <div className="mt-4">
-                                <div className="text-sm font-semibold text-foreground">技術的なハイライト</div>
+                                <div className="text-sm font-semibold text-foreground">Highlights</div>
                                 <ul className="my-2 ml-6 list-disc [&>li]:mt-1 text-sm">
                                     {technicalHighlights.map((highlight, i) => (
                                         <li key={i} className="break-words">{highlight}</li>
@@ -73,7 +73,7 @@ export default function DCard({
                             </div>
                         )}
                         <div className="mt-4">
-                            <div className="text-sm font-semibold">言語</div>
+                            <div className="text-sm font-semibold">Language</div>
                             <ul className="my-2 ml-6 list-disc [&>li]:mt-1 text-sm">
                                 {language.map((lang, i) => (
                                     <li key={i} className="break-words">{lang}</li>
@@ -82,7 +82,7 @@ export default function DCard({
                         </div>
                         {framework && framework.length > 0 && (
                             <div className="mt-2">
-                                <div className="text-sm font-semibold">フレームワーク</div>
+                                <div className="text-sm font-semibold">Framework</div>
                                 <ul className="my-2 ml-6 list-disc [&>li]:mt-1 text-sm">
                                     {framework.map((frame, i) => (
                                         <li key={i} className="break-words">{frame}</li>

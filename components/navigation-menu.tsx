@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import TranslateButton from "./translateButton"
 
 
 function NavigationMenuDemo() {
@@ -40,6 +41,9 @@ function NavigationMenuDemo() {
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="#blog">Blog</Link>
           </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <TranslateButton/>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild>

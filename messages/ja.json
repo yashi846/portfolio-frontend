@@ -1,0 +1,72 @@
+{
+    "title": "Yashi ポートフォリオ",
+    "aboutMe": {
+        "title": "自己紹介",
+        "greeting": "こんにちは",
+        "university": "早稲田大学 基幹理工学部 情報通信学科 3年生のYashiです",
+        "hobbies": "趣味は漫画、アニメ、ゲーム、海外ドラマ、料理、読書です",
+        "thanks": "よろしくお願いします!"
+    },
+    "profile": {
+        "title": "プロフィール",
+        "education": {
+            "title": "学歴",
+            "list": [
+                {
+                    "period": "2023年4月 - 現在",
+                    "detail": "早稲田大学 基幹理工学部 情報通信学科 在学"
+                }
+            ]
+        },
+        "experience": {
+            "title": "経験",
+            "list": [
+                {
+                    "period": "2025年7-8月",
+                    "company": "ABC DX Tech Internship"
+                }
+            ]
+        },
+        "certification": {
+            "title": "資格",
+            "1": "2024年8月 TOEFL iBT 71点",
+            "2": "2025年8月 CG エンジニア検定 ベーシック",
+            "3": "2025年9月 Google Cybersecurity Certificate"
+        }
+    },
+    "works": {
+        "title": "制作物",
+        "frontend": {
+            "title": "ポートフォリオサイト フロントエンド",
+            "shortDescription": "ポートフォリオサイトのフロントエンド",
+            "description": "このポートフォリオサイトをNext.js、TypeScript、Tailwind CSSを使用して作成しました。shadcn/uiコンポーネントを活用し、レスポンシブデザインを実装しています。",
+            "highlight1": "初めてのサイト制作",
+            "highlight2": "初めてのフロントエンド"
+        },
+        "backend": {
+            "title": "ポートフォリオサイト バックエンド",
+            "shortDescription": "ポートフォリオサイトのバックエンド",
+            "description": "プロジェクト3の詳細な説明をここに記載します。このプロジェクトで使用した技術や学んだことを説明してください。",
+            "highlight1": "初めてのサイト制作",
+            "highlight2": "初めてのバックエンド"
+        },
+        "shooting": {
+            "title": "Shooting Game",
+            "shortDescription": "UE5による3Dシューティングゲーム",
+            "description": "UE5を使用して、3Dシューティングゲームを作りました。時間内に銃を手にれて敵を射る。そして、ゴールするのが目的です。",
+            "highlight1": "初めてのゲームプロジェクト"
+        },
+        "speed": {
+            "title": "Speed Game",
+            "shortDescription": "UE5によるレーシングゲーム",
+            "description": "第24回UE5ぷちコンのテーマ「スピード」を元に制作したレーシングゲームです。時速が40km/hを下回らないように、ゴールを目指します。",
+            "highlight1": "ゲームの世界観が保たれるようなデザイン",
+            "highlight2": "テンプレートの活用"
+        }
+    },
+    "blog": {
+        "title": "ブログ",
+        "description": "現在、技術ブログを開発中です。完成後はこのページに最新記事や注目記事を掲載する予定です。",
+        "comingSoon": "Coming Soon"
+    }
+}
