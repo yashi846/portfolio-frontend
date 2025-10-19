@@ -2,7 +2,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HeaderNav } from "@/components/navigation-menu";
 import FooterSection from "@/components/footer";
-import { NextIntlClientProvider } from "next-intl";
+import { I18nProvider } from "@/src/i18n/provider";
 
 export default function RootLayout({
   children,
@@ -20,13 +20,13 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <NextIntlClientProvider>
+            <I18nProvider>
               <HeaderNav />
               <main className="mx-auto max-w-screen-xl flex-1 px-4 py-6">
                 {children}
               </main>
               <FooterSection className="bg-muted" />
-            </NextIntlClientProvider>
+            </I18nProvider>
           </ThemeProvider>
         </body>
       </html>

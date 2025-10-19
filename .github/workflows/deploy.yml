@@ -1,0 +1,60 @@
+name: Deploy Next.js to GitHub Pages
+
+on:
+  # 'main' ブランチにプッシュされたときに実行
+  push:
+    branches: ["main"]
+  # GitHubのActionsタブから手動で実行も可能にする
+  workflow_dispatch:
+
+# GITHUB_TOKEN の権限設定
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 複数のデプロイが同時に実行されないようにする
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # あなたのNode.jsバージョンに合わせてOK
+          cache: "npm"
+          
+      - name: Install Dependencies
+        run: npm ci
+        
+      - name: Build
+        # basePathを考慮してビルドスクリプトを実行
+        run: npm run build
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload Artifact
+        # ビルド結果の 'out' フォルダをアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+          
+  deploy:
+    # 'build' ジョブが成功したら実行
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,11 +1,13 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "@/src/i18n/hooks";
 import DCard from "@/components/dialog-card";
 import { Button } from "@/components/ui/button";
 
-export default async function Home() {
-  const t = await getTranslations();
+export default function Home() {
+  const { t, tRaw } = useTranslations();
   return (
     <main className="container mx-auto py-8 space-y-16">
       <h1 className="sr-only">Yashi Portfolio</h1>
@@ -32,11 +34,11 @@ export default async function Home() {
               {t("profile.education.title")}
             </h3>
             {(
-              t.raw("profile.education.list") as Array<{
+              tRaw("profile.education.list") as Array<{
                 period: string;
                 detail: string;
               }>
-            ).map((edu, idx) => (
+            )?.map((edu, idx) => (
               <p className="leading-7" key={idx}>
                 {edu.period}
                 <br />
@@ -49,11 +51,11 @@ export default async function Home() {
               {t("profile.experience.title")}
             </h3>
             {(
-              t.raw("profile.experience.list") as Array<{
+              tRaw("profile.experience.list") as Array<{
                 period: string;
                 company: string;
               }>
-            ).map((exp, idx) => (
+            )?.map((exp, idx) => (
               <p className="leading-7" key={idx}>
                 {exp.period}
                 <br />
