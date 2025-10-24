@@ -8,7 +8,7 @@ import DCard from "@/components/dialog-card";
 import { Button } from "@/components/ui/button";
 import { getWorksClient, type Work } from "@/src/app/lib/data";
 
-export function WorkPage(params: { lang: string }) {
+function WorkPage(params: { lang: string }) {
   const { lang } = params;
   const [works, setWorks] = React.useState<Work[]>([]);
   const [loading, setLoading] = React.useState(true);
