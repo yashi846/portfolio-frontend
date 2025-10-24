@@ -24,6 +24,11 @@ export function useI18n() {
   return context;
 }
 
+export function useLocale(): Locale {
+  const { locale } = useI18n();
+  return locale;
+}
+
 export function getInitialLocale(): Locale {
   // クライアントサイドでのみ実行
   if (typeof window === "undefined") return "en";

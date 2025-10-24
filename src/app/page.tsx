@@ -3,12 +3,71 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "@/src/i18n/hooks";
-import { getAssetPath } from "@/lib/asset-path";
+import { useLocale } from "@/src/i18n/client-config";
 import DCard from "@/components/dialog-card";
 import { Button } from "@/components/ui/button";
+import { getWorksClient, type Work } from "@/src/app/lib/data";
+
+export function WorkPage(params: { lang: string }) {
+  const { lang } = params;
+  const [works, setWorks] = React.useState<Work[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    let mounted = true;
+    setLoading(true);
+    getWorksClient(lang)
+      .then((data) => {
+        if (!mounted) return;
+        setWorks(data);
+      })
+      .catch((err) => {
+        if (!mounted) return;
+        setError(String(err));
+      })
+      .finally(() => {
+        if (!mounted) return;
+        setLoading(false);
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, [lang]);
+
+  if (loading) {
+    return <div className="w-full text-center">Loading works...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="w-full text-center text-destructive">Error: {error}</div>
+    );
+  }
+  return (
+    <>
+      {works.map((work) => (
+        <DCard
+          key={work.id}
+          title={work.title}
+          shortDescription={work.shortDescription}
+          description={work.description}
+          technicalHighlights={work.technicalHighlights}
+          language={work.language}
+          framework={work.framework}
+          repositoryUrl={work.repositoryUrl}
+          imageUrl={work.imageUrl || ""}
+          imageAlt={work.imageAlt || ""}
+        />
+      ))}
+    </>
+  );
+}
 
 export default function Home() {
   const { t, tRaw } = useTranslations();
+  const locale = useLocale();
   return (
     <main className="container mx-auto py-8 space-y-16">
       <h1 className="sr-only">Yashi Portfolio</h1>
@@ -94,58 +153,7 @@ export default function Home() {
           {t("works.title")}
         </h2>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto place-items-center">
-          <DCard
-            title={t("works.frontend.title")}
-            shortDescription={t("works.frontend.shortDescription")}
-            description={t("works.frontend.description")}
-            technicalHighlights={[
-              t("works.frontend.highlight1"),
-              t("works.frontend.highlight2"),
-              t("works.frontend.highlight3"),
-            ]}
-            language={["TypeScript"]}
-            framework={["Next.js", "React"]}
-            repositoryUrl="https://github.com/yashi846/portfolio-frontend"
-            imageUrl={getAssetPath("/images/works/portfolio-frontend.png")}
-            imageAlt="Portfolio website frontend screenshot"
-          />
-          <DCard
-            title={t("works.backend.title")}
-            shortDescription={t("works.backend.shortDescription")}
-            description={t("works.backend.description")}
-            technicalHighlights={[
-              t("works.backend.highlight1"),
-              t("works.backend.highlight2"),
-            ]}
-            language={["Python", "JavaScript"]}
-            framework={["React"]}
-            repositoryUrl="https://github.com/yashi846/portfolio-backend"
-            imageUrl={getAssetPath("/images/works/portfolio-backend.png")}
-            imageAlt="Portfolio website backend screenshot"
-          />
-          <DCard
-            title={t("works.shooting.title")}
-            shortDescription={t("works.shooting.shortDescription")}
-            description={t("works.shooting.description")}
-            technicalHighlights={[t("works.shooting.highlight1")]}
-            language={["Blueprint"]}
-            repositoryUrl="https://github.com/yashi846/shooting-game"
-            imageUrl={getAssetPath("/images/works/shooting-game.png")}
-            imageAlt="Shooting game screenshot"
-          />
-          <DCard
-            title={t("works.speed.title")}
-            shortDescription={t("works.speed.shortDescription")}
-            description={t("works.speed.description")}
-            technicalHighlights={[
-              t("works.speed.highlight1"),
-              t("works.speed.highlight2"),
-            ]}
-            language={["Blueprint"]}
-            repositoryUrl="https://github.com/yashi846/speed_game"
-            imageUrl={getAssetPath("/images/works/speed-game.jpg")}
-            imageAlt="Speed game screenshot"
-          />
+          <WorkPage lang={locale}></WorkPage>
         </div>
       </section>
 
