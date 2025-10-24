@@ -34,37 +34,6 @@
       "3": "Sep 2025 Google Cybersecurity Certificate"
     }
   },
-  "works": {
-    "title": "Works",
-    "frontend": {
-      "title": "Portfolio Website Frontend",
-      "shortDescription": "Portfolio website frontend",
-      "description": "This portfolio website was created using Next.js, TypeScript, and Tailwind CSS. It utilizes shadcn/ui components and implements responsive design.",
-      "highlight1": "First website project",
-      "highlight2": "First frontend",
-      "highlight3": "First Github Actions"
-    },
-    "backend": {
-      "title": "Portfolio Website Backend",
-      "shortDescription": "Portfolio website backend",
-      "description": "Making",
-      "highlight1": "First website project",
-      "highlight2": "First backend"
-    },
-    "shooting": {
-      "title": "Shooting Game",
-      "shortDescription": "3D shooting game with UE5",
-      "description": "Created a 3D shooting game using UE5. The goal is to get a gun within the time limit, shoot the enemies, and reach the goal.",
-      "highlight1": "First game project"
-    },
-    "speed": {
-      "title": "Speed Game",
-      "shortDescription": "Racing game with UE5",
-      "description": "A racing game based on the theme 'Speed' from the 24th UE5 Petit Con. The goal is to reach the finish line without dropping below 40km/h.",
-      "highlight1": "Design that maintains the worldview of the game",
-      "highlight2": "Utilization of templates"
-    }
-  },
   "blog": {
     "title": "Blog",
     "description": "Currently developing a tech blog. After completion, the latest and featured articles will be posted on this page.",

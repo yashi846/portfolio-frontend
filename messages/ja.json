@@ -34,37 +34,6 @@
       "3": "2025年9月 Google Cybersecurity Certificate"
     }
   },
-  "works": {
-    "title": "制作物",
-    "frontend": {
-      "title": "ポートフォリオサイト フロントエンド",
-      "shortDescription": "ポートフォリオサイトのフロントエンド",
-      "description": "このポートフォリオサイトをNext.js、TypeScript、Tailwind CSSを使用して作成しました。shadcn/uiコンポーネントを活用し、レスポンシブデザインを実装しています。",
-      "highlight1": "初めてのサイト制作",
-      "highlight2": "初めてのフロントエンド",
-      "highlight3": "初めてのGithub Actions"
-    },
-    "backend": {
-      "title": "ポートフォリオサイト バックエンド",
-      "shortDescription": "ポートフォリオサイトのバックエンド",
-      "description": "鋭意制作中",
-      "highlight1": "初めてのサイト制作",
-      "highlight2": "初めてのバックエンド"
-    },
-    "shooting": {
-      "title": "Shooting Game",
-      "shortDescription": "UE5による3Dシューティングゲーム",
-      "description": "UE5を使用して、3Dシューティングゲームを作りました。時間内に銃を手にれて敵を射る。そして、ゴールするのが目的です。",
-      "highlight1": "初めてのゲームプロジェクト"
-    },
-    "speed": {
-      "title": "Speed Game",
-      "shortDescription": "UE5によるレーシングゲーム",
-      "description": "第24回UE5ぷちコンのテーマ「スピード」を元に制作したレーシングゲームです。時速が40km/hを下回らないように、ゴールを目指します。",
-      "highlight1": "ゲームの世界観が保たれるようなデザイン",
-      "highlight2": "テンプレートの活用"
-    }
-  },
   "blog": {
     "title": "ブログ",
     "description": "現在、技術ブログを開発中です。完成後はこのページに最新記事や注目記事を掲載する予定です。",
