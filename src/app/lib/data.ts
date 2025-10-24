@@ -11,13 +11,31 @@ export type Work = {
   imageAlt: string | null;
 };
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 export async function getWorksClient(lang: string): Promise<Work[]> {
-  const res = await fetch(`${API_BASE_URL}/api/works?lang=${lang}`);
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch works");
+  if (!API_BASE_URL) {
+    console.warn(
+      "NEXT_PUBLIC_API_URL is not set. getWorksClient will return an empty array."
+    );
+    return [];
   }
-  return res.json();
+
+  try {
+    const url = `${API_BASE_URL.replace(
+      /\/$/,
+      ""
+    )}/api/works?lang=${encodeURIComponent(lang)}`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      console.error("getWorksClient: bad response", res.status, res.statusText);
+      return [];
+    }
+
+    return (await res.json()) as Work[];
+  } catch (err) {
+    console.error("getWorksClient: failed to fetch works", err);
+    return [];
+  }
 }
