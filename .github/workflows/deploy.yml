@@ -34,14 +34,13 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build and export
-        # ビルド時に本番 API の URL を注入して静的エクスポートを出力
+      - name: Build
+        # ビルド時に本番 API の URL を注入する
         env:
           NODE_ENV: production
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         run: |
           npm run build
-          npx next export
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
