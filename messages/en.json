@@ -34,6 +34,9 @@
       "3": "Sep 2025 Google Cybersecurity Certificate"
     }
   },
+  "works": {
+    "title": "Works"
+  },
   "blog": {
     "title": "Blog",
     "description": "Currently developing a tech blog. After completion, the latest and featured articles will be posted on this page.",
