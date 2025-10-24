@@ -41,7 +41,7 @@ jobs:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         run: |
           npm run build
-          npx next export -o out
+          npx next export
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
