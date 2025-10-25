@@ -57,7 +57,11 @@ export default function DCard({
         </Card>
       </DialogTrigger>
       <DialogContent className="p-0 sm:max-w-4xl">
-        <div className="flex flex-col md:flex-row gap-y-6 gap-x-8 p-6">
+        <div
+          className={`flex flex-col ${
+            imageUrl && imageAlt ? "md:flex-row" : ""
+          } gap-y-6 gap-x-8 p-6`}
+        >
           <div className="flex-1 min-w-0">
             <DialogHeader className="space-y-2">
               <DialogTitle className="text-xl font-semibold break-words">
@@ -103,17 +107,21 @@ export default function DCard({
                 </ul>
               </div>
             )}
-            <DialogFooter className="mt-4 p-0">
+            <DialogFooter
+              className={`mt-4 p-0 ${
+                imageUrl && imageAlt ? "" : "sm:justify-center"
+              }`}
+            >
               <a href={repositoryUrl} target="_blank" rel="noopener noreferrer">
                 <Button variant="link">Access Repository</Button>
               </a>
             </DialogFooter>
           </div>
-          {imageUrl && (
+          {imageUrl && imageAlt && (
             <div className="relative w-full md:w-64 lg:w-80 aspect-[4/3] flex-shrink-0 overflow-hidden rounded-[20px] bg-muted/10">
               <Image
                 src={imageUrl}
-                alt={imageAlt || title}
+                alt={imageAlt}
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 256px, 320px"

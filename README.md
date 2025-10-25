@@ -37,3 +37,31 @@ src/i18n/              # next-intl のリクエスト設定
   - なければ `Accept-Language` から ja を優先、それ以外は en
 - 翻訳文は `messages/en.json` / `messages/ja.json` に格納
 - `TranslateButton` で `locale` Cookie を切替、`router.refresh()` で再取得
+
+## バックエンド API について
+
+- ベース URL
+
+  - フロントエンドはビルド時に環境変数 `NEXT_PUBLIC_API_URL` を参照します。
+
+- 主要エンドポイント（フロントエンド側の呼び出し例）
+
+  - GET {BASE_URL}/api/works?lang=ja|en
+    - 作品一覧を取得します。`lang` クエリで言語を指定します。
+
+- レスポンスのデータ形
+```json
+{
+  "id": "適当なID",
+  "language": ["TypeScript"],
+  "framework": ["Next.js", "React"],
+  "repositoryUrl": "適当なURL",
+  "imageUrl": "/images/works/portfolio-frontend.png",
+  "imageAlt": "Portfolio website frontend screenshot",
+  "title": "ポートフォリオサイト フロントエンド",
+  "shortDescription": "ポートフォリオサイトのフロントエンド",
+  "description": "このポートフォリオサイトをNext.js、TypeScript、Tailwind CSSを使用して作成しました。shadcn/uiコンポーネントを活用し、レスポンシブデザインを実装しています。",
+  "technicalHighlights": ["初めてのサイト制作", "初めてのフロントエンド", "初めてのGithub Actions"],
+  "workId": "適当なID"
+}
+```
