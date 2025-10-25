@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "@/src/i18n/hooks";
 import { useLocale } from "@/src/i18n/client-config";
+import { getAssetPath } from "@/lib/asset-path";
 import DCard from "@/components/dialog-card";
 import { Button } from "@/components/ui/button";
 import { getWorksClient, type Work } from "@/src/app/lib/data";
@@ -57,7 +58,7 @@ function WorkPage(params: { lang: string }) {
           language={work.language}
           framework={work.framework}
           repositoryUrl={work.repositoryUrl}
-          imageUrl={work.imageUrl || ""}
+          imageUrl={getAssetPath(work.imageUrl || "")}
           imageAlt={work.imageAlt || ""}
         />
       ))}
